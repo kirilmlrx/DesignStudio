@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WebCrumbs - Контакты и социальные сети">
+    <meta name="robots" content="index, follow">
+    <title>Viper - Контакты</title>
+
+    <!-- Оптимизация шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+
+    <style>
+        :root {
+            --color-primary: #7e22ce;
+            --color-primary-light: #a855f7;
+            --color-primary-dark: #4c1d95;
+            --color-secondary: #3b82f6;
+            --color-accent: #8b5cf6;
+            --color-text: #1f2937;
+            --color-text-light: #6b7280;
+            --color-white: #ffffff;
+            --color-gray-light: #f3f4f6;
+            --color-gray-dark: #374151;
+            --color-purple: #B799FF;
+            --color-blue: #8ECAE6;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-gray-light);
+            overflow-x: hidden;
+            font-size: clamp(16px, 2.5vw, 18px);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 3vw, 2rem);
+        }
+
+        .section {
+            padding: clamp(3rem, 8vw, 4rem) 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, var(--color-purple), var(--color-blue));
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--color-white);
+            box-shadow: var(--shadow-sm);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: clamp(0.75rem, 2vw, 1rem);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: var(--color-primary);
+        }
+
+        .logo-icon {
+            margin-right: 0.5rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .nav {
+            display: flex;
+            gap: clamp(1rem, 3vw, 2rem);
+        }
+
+        .nav-link {
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--color-primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(80%, 300px);
+            height: 100vh;
+            background-color: var(--color-white);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+
+        .mobile-nav-link {
+            margin: 1.5rem 0;
+        }
+
+        .mobile-nav-link a {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: #1f2937;
+            color: var(--color-white);
+            padding: clamp(3rem, 8vw, 4rem) 0;
+            margin-top: 64px;
+        }
+
+        .contact-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: clamp(1.5rem, 4vw, 2rem);
+            background: linear-gradient(to bottom right, rgba(17, 24, 39, 0.7), rgba(31, 41, 55, 0.7));
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-xl);
+            backdrop-filter: blur(12px);
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            position: absolute;
+            top: -1.5rem;
+            left: 0;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-label span {
+            color: var(--color-purple);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: var(--color-white);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--color-purple);
+            box-shadow: 0 0 10px rgba(183, 153, 255, 0.5);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-textarea {
+            height: 128px;
+            resize: none;
+        }
+
+        .error-message {
+            color: #f87171;
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-submit {
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-submit button {
+            padding: 0.75rem 2rem;
+            background-color: var(--color-purple);
+            color: var(--color-white);
+            font-weight: 600;
+            border-radius: 9999px;
+            transition: var(--transition);
+        }
+
+        .form-submit button:hover {
+            background-color: #a47fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(183, 153, 255, 0.7);
+        }
+
+        .success-message,
+        .error-message-global,
+        .loading-spinner {
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            display: none;
+        }
+
+        .success-message {
+            background-color: rgba(22, 163, 74, 0.2);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #86efac;
+        }
+
+        .error-message-global {
+            background-color: rgba(220, 38, 38, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+
+        .loading-spinner {
+            display: flex;
+            justify-content: center;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--color-purple);
+            border-bottom: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Social Section */
+        .social-section {
+            background-color: #1f2937;
+            color: var(--color-white);
+            padding: clamp(3rem, 8vw, 4rem) 0;
+        }
+
+        .social-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            text-align: center;
+            color: var(--color-text-light);
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-link {
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .social-icon {
+            width: 56px;
+            height: 56px;
+            background-color: #374151;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #f3f4f6;
+            transition: var(--transition);
+        }
+
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .social-link:hover .vk { background-color: #4b6db6; }
+        .social-link:hover .telegram { background-color: #60a5fa; }
+        .social-link:hover .instagram { background-color: #db2777; }
+        .social-link:hover .whatsapp { background-color: #22c55e; }
+
+        .social-label {
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+            color: var(--color-text-light);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .social-link:hover .social-label {
+            opacity: 1;
+        }
+
+        .subscribe {
+            max-width: 600px;
+            margin: 4rem auto 0;
+            text-align: center;
+        }
+
+        .subscribe-text {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-form {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .subscribe-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background-color: #374151;
+            border: 1px solid #4b5563;
+            border-right: none;
+            border-radius: 0.5rem 0 0 0.5rem;
+            color: var(--color-white);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            transition: var(--transition);
+        }
+
+        .subscribe-input:focus {
+            border-color: var(--color-primary);
+        }
+
+        .subscribe-button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            border-radius: 0 0.5rem 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .subscribe-button:hover {
+            background-color: var(--color-primary-light);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-primary-dark);
+            color: var(--color-white);
+            padding: clamp(3rem, 8vw, 4rem) 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-logo-icon {
+            margin-right: 0.5rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .footer-about {
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+
+        .footer-title {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--color-primary-light);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-link {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link a {
+            display: flex;
+            align-items: center;
+            opacity: 0.8;
+            transition: var(--transition);
+            font-size: clamp(0.875rem, 2vw, 1rem);
+        }
+
+        .footer-link a:hover {
+            opacity: 1;
+            color: var(--color-primary-light);
+            padding-left: 0.25rem;
+        }
+
+        .footer-link-icon {
+            margin-right: 0.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .footer-social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .footer-social-link:hover {
+            background-color: var(--color-primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .social-links {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .contact-form,
+            .success-message,
+            .error-message-global,
+            .loading-spinner {
+                margin: 0 1rem;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .subscribe-input {
+                border: 1px solid #4b5563;
+                border-radius: 0.5rem;
+            }
+
+            .subscribe-button {
+                border-radius: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .contact-title,
+            .social-title {
+                font-size: clamp(1.5rem, 5vw, 2rem);
+            }
+
+            .social-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="/" class="logo" aria-label="WebCrumbs Главная страница">
+                <span class="material-symbols-outlined logo-icon">design_services</span>
+                Viper
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+                <span class="material-symbols-outlined">menu</span>
+                <span class="sr-only">Меню</span>
+            </button>
+            
+            <nav class="nav" aria-label="Основная навигация">
+                <a href="/uslugi.html" class="nav-link">Послуги</a>
+                <a href="/portolio.html" class="nav-link">Портфоліо</a>
+                <a href="/onnn.html" class="nav-link">Про нас</a>
+                <a href="/contact.html" class="nav-link">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Закрыть меню">
+            <span class="material-symbols-outlined">close</span>
+            <span class="sr-only">Закрити</span>
+        </button>
+        
+        <ul class="mobile-nav-links">
+            <li class="mobile-nav-link"><a href="#services">Послуги</a></li>
+            <li class="mobile-nav-link"><a href="#portfolio">Портфоліо</a></li>
+            <li class="mobile-nav-link"><a href="#about">Про нас</a></li>
+            <li class="mobile-nav-link"><a href="#contact">Контакти</a></li>
+        </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Зв'яжіться з нами</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Ім'я <span>*</span></label>
+                    <input type="text" id="name" class="form-input" placeholder="Ваше Ім'я" required pattern="^[A-Za-zА-Яа-яЁё\s]+$" title="Будь ласка, використовуйте лише літери">
+                    <div class="error-message">Будь ласка, введіть ім'я (лише букви)</div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail <span>*</span></label>
+                    <input type="email" id="email" class="form-input" placeholder="example@mail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Будь ласка, введіть правильний email">
+                    <div class="error-message">Будь ласка, введіть правильний email</div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Повідомлення <span>*</span></label>
+                    <textarea id="message" class="form-textarea" placeholder="Ваше Повідомлення..." required minlength="5" title="Будь ласка, напишіть повідомлення (мінімум 5 символів)"></textarea>
+                    <div class="error-message">Будь ласка, напишіть повідомлення (мінімум 5 символів)</div>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn">Відправити</button>
+                </div>
+            </form>
+            <div id="successMessage" class="success-message">
+                <p>Дякуємо за ваше повідомлення! Ми зв'яжемося з вами найближчим часом.</p>
+            </div>
+            <div id="errorMessage" class="error-message-global">
+                <p>Будь ласка, спробуйте пізніше.</p>
+            </div>
+            <!-- <div id="loadingSpinner" class="loading-spinner">
+                <div class="spinner"></div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Social Section -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="social-title">Наші соціальні мережі</h2>
+            <p class="social-subtitle">Приєднуйтесь до нас у соціальних мережах, щоб бути в курсі останніх новин та акцій</p>
+            <div class="social-links">
+                <a href="https://vk.com/example" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="social-icon vk">
+                        <i class="fa-brands fa-vk"></i>
+                    </div>
+                    <span class="social-label">ВКонтакте</span>
+                </a>
+                <a href="https://t.me/example" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="social-icon telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </div>
+                    <span class="social-label">Telegram</span>
+                </a>
+                <a href="https://instagram.com/example" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="social-icon instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <span class="social-label">Instagram</span>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="social-link">
+                    <div class="social-icon whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <span class="social-label">WhatsApp</span>
+                </a>
+            </div>
+            <div class="subscribe">
+                <p class="subscribe-text">Підпишіться на наші оновлення</p>
+                <div class="subscribe-form">
+                    <input type="email" class="subscribe-input" placeholder="Ваш email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Будь ласка, введіть правильний email">
+                    <button class="subscribe-button">Підписатися</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <span class="material-symbols-outlined footer-logo-icon" aria-hidden="true">design_services</span>
+                        Viper
+                    </div>
+                    <p class="footer-about">Створюємо сучасні та ефективні дизайни, які допомагають бізнесу рости та розвиватися.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook" rel="noopener">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" rel="noopener">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn" rel="noopener">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter" rel="noopener">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Меню</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#services">Послуги</a></li>
+                        <li class="footer-link"><a href="#portfolio">Портфоліо</a></li>
+                        <li class="footer-link"><a href="#about">Про нас</a></li>
+                        <li class="footer-link"><a href="#contact">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Услуги</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#">Веб-дизайн</a></li>
+                        <li class="footer-link"><a href="#">Прев'ю YouTube</a></li>
+                        <li class="footer-link"><a href="#">Банери</a></li>
+                        <li class="footer-link"><a href="#">Оформлення соцмереж</a></li>
+                        <li class="footer-link"><a href="#">UI/UX дизайн</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Контакти</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link">
+                            <a href="mailto:info@webcrumbs.ru">
+                                <span class="material-symbols-outlined footer-link-icon" aria-hidden="true">mail</span>
+                                info@viper.com
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="tel:+71234567890">
+                                <span class="material-symbols-outlined footer-link-icon" aria-hidden="true">call</span>
+                                +380 (98) 08-43-324
+                            </a>
+                        </li>
+                        <li class="footer-link">
+                            <a href="#" aria-label="Адрес">
+                                <span class="material-symbols-outlined footer-link-icon" aria-hidden="true">location_on</span>
+                                м. Дніпро, вул. Перемоги, 6
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Viper. Усі права захищені.</p>
+                <p>Розроблено з ♥ для наших клієнтів</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mobile Navigation Toggle
+            const navToggle = document.getElementById('navToggle');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileNavClose = document.getElementById('mobileNavClose');
+
+            navToggle.addEventListener('click', () => {
+                mobileNav.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                navToggle.setAttribute('aria-expanded', 'true');
+            });
+
+            mobileNavClose.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+
+            document.querySelectorAll('.mobile-nav-link a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const inputs = contactForm.querySelectorAll('input, textarea');
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    const error = input.nextElementSibling;
+                    if (!input.checkValidity()) {
+                        error.style.display = 'block';
+                        isValid = false;
+                    } else {
+                        error.style.display = 'none';
+                    }
+                });
+
+                if (!isValid) return;
+
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+
+                // Simulate form submission
+                setTimeout(() => {
+                    const random = Math.random();
+                    if (random > 0.2) { // 80% success rate for demo
+                        successMessage.style.display = 'block';
+                        contactForm.reset();
+                    } else {
+                        errorMessage.style.display = 'block';
+                    }
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
