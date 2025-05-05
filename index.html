@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,30 @@
     <meta name="robots" content="index, follow">
     <title>Viper - Веб-дизайн і розробка
     </title>
-    
+
     <!-- Оптимизация шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" media="print" onload="this.media='all'">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        media="print" onload="this.media='all'">
+
     <!-- Font Awesome с defer -->
     <link rel="stylesheet" href="/all.min.css" media="print" onload="this.media='all'">
-    
+
     <!-- Предзагрузка ресурсов -->
-    <link rel="preload" href="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp" as="image">
+    <link rel="preload"
+        href="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&fm=webp"
+        as="image">
 
     <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-<!-- JS -->
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script src="main.js" ></script>
 
-    
     <style>
         :root {
             --color-primary: #7e22ce;
@@ -80,7 +86,9 @@
             color: inherit;
         }
 
-        a:focus, button:focus, input:focus {
+        a:focus,
+        button:focus,
+        input:focus {
             outline: 2px solid var(--color-primary);
             outline-offset: 2px;
         }
@@ -240,7 +248,7 @@
             align-items: center;
             transform: translateX(100%);
             transition: transform 0.3s ease;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-nav.active {
@@ -650,7 +658,10 @@
 
         /* Responsive Styles */
         @media (max-width: 1024px) {
-            .services-grid, .portfolio-grid, .testimonials-grid {
+
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
         }
@@ -674,7 +685,9 @@
                 max-width: 300px;
             }
 
-            .service-card, .portfolio-item, .testimonial-card {
+            .service-card,
+            .portfolio-item,
+            .testimonial-card {
                 padding: 1.5rem;
             }
         }
@@ -684,7 +697,9 @@
                 padding: 0 1rem;
             }
 
-            .services-grid, .portfolio-grid, .testimonials-grid {
+            .services-grid,
+            .portfolio-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -713,6 +728,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -721,12 +737,12 @@
                 <span class="material-symbols-outlined logo-icon">design_services</span>
                 Viper
             </a>
-            
+
             <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
                 <span class="material-symbols-outlined">menu</span>
                 <span class="sr-only">Меню</span>
             </button>
-            
+
             <nav class="nav" aria-label="Основная навигация">
                 <a href="/DesignStudio/" class="nav-link">Головна</a>
                 <a href="/DesignStudio/uslugi.html" class="nav-link">Послуги</a>
@@ -743,7 +759,7 @@
             <span class="material-symbols-outlined">close</span>
             <span class="sr-only">Закрыть</span>
         </button>
-        
+
         <ul class="mobile-nav-links">
             <li class="mobile-nav-link"><a href="/DesignStudio/">Головна</a></li>
             <li class="mobile-nav-link"><a href="/DesignStudio/uslugi.html">Послуги</a></li>
@@ -758,11 +774,12 @@
         <div class="hero-bg-circle circle-1"></div>
         <div class="hero-bg-circle circle-2"></div>
         <div class="hero-bg-circle circle-3"></div>
-        
+
         <div class="container hero-content">
             <h1 class="hero-title">Створюємо дизайн, який працює</h1>
-            <p class="hero-subtitle">Спеціалізуємося на дизайні сайтів, прев'ю YouTube, банерах та оформленні соцмереж</p>
-            
+            <p class="hero-subtitle">Спеціалізуємося на дизайні сайтів, прев'ю YouTube, банерах та оформленні соцмереж
+            </p>
+
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Замовити проект</a>
                 <a href="#portfolio" class="btn btn-secondary">Переглянути портфоліо</a>
@@ -775,42 +792,46 @@
         <div class="container">
             <h2 class="section-title">Наші послуги</h2>
             <p class="section-subtitle">Виберіть послугу, яка підходить для ваших цілей</p>
-            
+
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">design_services</span>
                     </div>
                     <h3 class="service-title">Веб-дизайн</h3>
-                    <p class="service-description">Створюємо унікальні та сучасні дизайни, які виділять ваш бренд серед конкурентів.</p>
-                    
+                    <p class="service-description">Створюємо унікальні та сучасні дизайни, які виділять ваш бренд серед
+                        конкурентів.</p>
+
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">videocam</span>
                     </div>
                     <h3 class="service-title">Прев'ю YouTube</h3>
-                    <p class="service-description">Розробляємо привабливі прев'ю для YouTube, які підвищують клікабельність відео.</p>
-                    
+                    <p class="service-description">Розробляємо привабливі прев'ю для YouTube, які підвищують
+                        клікабельність відео.</p>
+
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">ads_click</span>
                     </div>
                     <h3 class="service-title">Банери</h3>
-                    <p class="service-description">Створюємо яскраві банери для вашого сайту, рекламних кампаній і соцмереж.</p>
-                    
+                    <p class="service-description">Створюємо яскраві банери для вашого сайту, рекламних кампаній і
+                        соцмереж.</p>
+
                 </div>
-                
+
                 <div class="service-card">
                     <div class="service-icon">
                         <span class="material-symbols-outlined" aria-hidden="true">share</span>
                     </div>
                     <h3 class="service-title">Оформлення соцмереж</h3>
-                    <p class="service-description">Розробляємо стильне та єдине оформлення для всіх ваших соціальних мереж та профілів.</p>
-                    
+                    <p class="service-description">Розробляємо стильне та єдине оформлення для всіх ваших соціальних
+                        мереж та профілів.</p>
+
                 </div>
             </div>
         </div>
@@ -821,49 +842,55 @@
         <div class="container">
             <h2 class="section-title">Наші проекти</h2>
             <p class="section-subtitle">Ознайомтеся з вибраними роботами з нашого портфоліо</p>
-            
+
             <div class="portfolio-grid">
                 <a data-fancybox="gallery" href="/DesignStudio/img/site.jpg" class="portfolio-item">
-                        <img src="/DesignStudio/img/site.jpg" alt="Корпоративный веб-сайт" class="portfolio-image lazy" loading="lazy" width="500" height="350" data-src="/DesignStudio/img/site.jpg">
+                    <img src="/DesignStudio/img/site.jpg" alt="Корпоративный веб-сайт" class="portfolio-image lazy"
+                        loading="lazy" width="500" height="350" data-src="/DesignStudio/img/site.jpg">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Корпоративний веб-сайт</h3>
                         <span class="portfolio-category">Дизайн сайта</span>
                     </div>
                 </a>
-                
-                <a data-fancybox="gallery" href="/DesignStudio/img/phuket.jpg"class="portfolio-item">
+
+                <a data-fancybox="gallery" href="/DesignStudio/img/phuket.jpg" class="portfolio-item">
                     <picture>
-                        <img src="/DesignStudio/img/phuket.jpg" alt="Превью для YouTube" class="portfolio-image lazy" loading="lazy" width="500" height="350" data-src="/DesignStudio/img/phuket.jpg">
+                        <img src="/DesignStudio/img/phuket.jpg" alt="Превью для YouTube" class="portfolio-image lazy"
+                            loading="lazy" width="500" height="350" data-src="/DesignStudio/img/phuket.jpg">
                     </picture>
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Відео прев'ю</h3>
                         <span class="portfolio-category">Прев'ю YouTube</span>
                     </div>
                 </a>
-                
+
                 <a data-fancybox="gallery" href="/DesignStudio/img/banergermes.jpg" class="portfolio-item">
                     <picture>
-                        <img src="/DesignStudio/img/banergermes.jpg" alt="Рекламные баннеры" class="portfolio-image lazy" loading="lazy" width="500" height="350" data-src="/DesignStudio/img/banergermes.jpg">
+                        <img src="/DesignStudio/img/banergermes.jpg" alt="Рекламные баннеры"
+                            class="portfolio-image lazy" loading="lazy" width="500" height="350"
+                            data-src="/DesignStudio/img/banergermes.jpg">
                     </picture>
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Рекламні банери</h3>
                         <span class="portfolio-category">Банер</span>
-                        
+
                     </div>
                 </a>
-                
+
                 <a data-fancybox="gallery" href="/DesignStudio/img/mobileapp.jpg" class="portfolio-item">
                     <picture>
-                        <img src="/DesignStudio/img/mobileapp.jpg" alt="Мобильное приложение" class="portfolio-image lazy" loading="lazy" width="500" height="350" data-src="/DesignStudio/img/mobileapp.jpg">
+                        <img src="/DesignStudio/img/mobileapp.jpg" alt="Мобильное приложение"
+                            class="portfolio-image lazy" loading="lazy" width="500" height="350"
+                            data-src="/DesignStudio/img/mobileapp.jpg">
                     </picture>
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Мобільний додаток</h3>
                         <span class="portfolio-category">UI/UX дизайн</span>
-                        
+
                     </div>
                 </a>
             </div>
-            
+
             <div style="text-align: center; margin-top: 2rem;">
                 <a href="/DesignStudio/portolio.html" class="btn btn-primary">Дивитись усі роботи</a>
             </div>
@@ -875,17 +902,21 @@
         <div class="container">
             <h2 class="section-title">Відгуки наших клієнтів</h2>
             <p class="section-subtitle">Дізнайтесь, що говорять про нас наші клієнти</p>
-            
+
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp" alt="Александр Иванов" class="testimonial-avatar lazy" loading="lazy" width="200" height="200" data-src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp"
+                            alt="Александр Иванов" class="testimonial-avatar lazy" loading="lazy" width="200"
+                            height="200"
+                            data-src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp">
                         <div>
                             <h4 class="testimonial-author">Олександр Іванов</h4>
                             <p class="testimonial-position">Генеральний директор, ТОВ "Гермес"</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Співпраця з вашою компанією перевершила всі наші очікування. Якість обслуговування на найвищому рівні, а результати говорять самі за себе.</p>
+                    <p class="testimonial-text">Співпраця з вашою компанією перевершила всі наші очікування. Якість
+                        обслуговування на найвищому рівні, а результати говорять самі за себе.</p>
                     <div class="testimonial-rating" aria-label="Рейтинг 5 звезд">
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
@@ -894,16 +925,19 @@
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp" alt="Елена Петрова" class="testimonial-avatar lazy" loading="lazy" width="200" height="200" data-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp"
+                            alt="Елена Петрова" class="testimonial-avatar lazy" loading="lazy" width="200" height="200"
+                            data-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp">
                         <div>
                             <h4 class="testimonial-author">Олена Петрова</h4>
                             <p class="testimonial-position">Маркетинг-директор "МедіаГруп"</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Після початку співпраці наші показники зросли на 40%. Ваші спеціалісти справді знають свою справу.</p>
+                    <p class="testimonial-text">Після початку співпраці наші показники зросли на 40%. Ваші спеціалісти
+                        справді знають свою справу.</p>
                     <div class="testimonial-rating" aria-label="Рейтинг 5 звезд">
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
@@ -912,16 +946,20 @@
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
                     </div>
                 </div>
-                
+
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp" alt="Дмитрий Сергеев" class="testimonial-avatar lazy" loading="lazy" width="200" height="200" data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp"
+                            alt="Дмитрий Сергеев" class="testimonial-avatar lazy" loading="lazy" width="200"
+                            height="200"
+                            data-src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80&fm=webp">
                         <div>
                             <h4 class="testimonial-author">Дмитро Сергєєв</h4>
                             <p class="testimonial-position">IT-директор, "ФінансГруп"</p>
                         </div>
                     </div>
-                    <p class="testimonial-text">Впровадження вашої системи дозволило нам оптимізувати робочі процеси та підвищити ефективність команди.</p>
+                    <p class="testimonial-text">Впровадження вашої системи дозволило нам оптимізувати робочі процеси та
+                        підвищити ефективність команди.</p>
                     <div class="testimonial-rating" aria-label="Рейтинг 4.5 звезды">
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
                         <span class="material-symbols-outlined" aria-hidden="true">star</span>
@@ -939,9 +977,212 @@
         <div class="container cta-content">
             <h2 class="cta-title">Чи готові почати?</h2>
             <p class="section-subtitle">Залишіть заявку і ми зв'яжемося з вами для обговорення вашого проекту</p>
-            <a href="#" class="btn btn-primary">Заповнити бриф</a>
+            <button id="openPopup" href="#" class="btn btn-primary">Заповнити бриф</button>
         </div>
     </section>
+    <section class="popup hidden" id="popup">
+        <div class="container-popup">
+            <button id="closePopup" class="popup__close">×</button>
+            <div class="form-section">
+                <h2 class="form-title">Оформити замовлення</h2>
+                <p class="form-subtitle">Заповніть форму нижче, і ми зв'яжемося з вами для обговорення деталей</p>
+                <form class="space-y-6" id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ім'я*</label>
+                            <input type="text" name="name" id="name" required class="form-input" placeholder="Ваше имя">
+                            <p class="form-error" id="name-error">Будь ласка, вкажіть ваше ім'я</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Е-майл*</label>
+                            <input type="email" name="email" id="email" required class="form-input" placeholder="example@mail.com">
+                            <p class="form-error" id="email-error">Будь ласка, вкажіть коректний email</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service" class="form-label">Виберіть послугу*</label>
+                        <select id="service" name="select" required class="form-select">
+                            <option value="" disabled selected>Виберіть послугу</option>
+                            <option value="design">Дизайн сайтів</option>
+                            <option value="youtube">Прев'ю YouTube</option>
+                            <option value="banners">Банери</option>
+                            <option value="social">Оформлення соцмереж</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Повідомлення</label>
+                        <textarea id="message" name="message" rows="5" class="form-textarea"
+                            placeholder="Опишіть ваш проект або вкажіть додаткові побажання"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="btn btn-primary">Надіслати запит</button>
+                    </div>
+                    <div id="success-message" class="form-success">
+                        <p>Дякую! Вашу заявку успішно відправлено.</p>
+                        <p>Ми зв'яжемося з вами найближчим часом.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .justify-center {
+            display: flex;
+            justify-content: center;
+            margin-top: 14px;
+        }
+
+        .form-section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-title {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--color-text-light);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            font-weight: 500;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-gray-light);
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+        }
+
+        .form-input:hover,
+        .form-select:hover,
+        .form-textarea:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 2px rgba(183, 153, 255, 0.5);
+        }
+
+        .form-error {
+            color: #ef4444;
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
+            display: none;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            background-color: #dcfce7;
+            color: #15803d;
+            border-radius: 0.5rem;
+        }
+
+        .form-section {
+           
+            background: rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .container-popup {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 16px;
+            position: relative;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup__content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .popup__close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        const popup = document.getElementById('popup');
+        const openBtn = document.getElementById('openPopup');
+        const closeBtn = document.getElementById('closePopup');
+
+        openBtn.addEventListener('click', () => {
+            popup.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.classList.add('hidden');
+        });
+
+    </script>
 
     <!-- Footer -->
     <footer class="footer">
@@ -949,12 +1190,14 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-logo">
-                        <span class="material-symbols-outlined footer-logo-icon" aria-hidden="true">design_services</span>
+                        <span class="material-symbols-outlined footer-logo-icon"
+                            aria-hidden="true">design_services</span>
                         Viper
                     </div>
-                    <p class="footer-about">Створюємо сучасні та ефективні дизайни, які допомагають бізнесу рости та розвиватися.</p>
+                    <p class="footer-about">Створюємо сучасні та ефективні дизайни, які допомагають бізнесу рости та
+                        розвиватися.</p>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Меню</h3>
                     <ul class="footer-links">
@@ -962,10 +1205,10 @@
                         <li class="footer-link"><a href="/DesignStudio/uslugi.html">Послуги</a></li>
                         <li class="footer-link"><a href="/DesignStudio/portolio.html">Портфоліо</a></li>
                         <li class="footer-link"><a href="/DesignStudio/onnn.html>Про нас</a></li>
-                        <li class="footer-link"><a href="/DesignStudio/contact.html">Контакты</a></li>
+                        <li class=" footer-link"><a href="/DesignStudio/contact.html">Контакты</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Послуги</h3>
                     <ul class="footer-links">
@@ -975,7 +1218,7 @@
                         <li class="footer-link"><a href="/DesignStudio/portolio.html">Оформлення соцмереж</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Контакти</h3>
                     <ul class="footer-links">
@@ -993,14 +1236,15 @@
                         </li>
                         <li class="footer-link">
                             <a href="#" aria-label="Адрес">
-                                <span class="material-symbols-outlined footer-link-icon" aria-hidden="true">location_on</span>
+                                <span class="material-symbols-outlined footer-link-icon"
+                                    aria-hidden="true">location_on</span>
                                 м. Дніпро, вул. Перемоги, 6
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Viper. Усі права захищені.</p>
                 <p>Розроблено з ♥ для наших клієнтів</p>
@@ -1038,7 +1282,7 @@
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
@@ -1070,4 +1314,5 @@
         });
     </script>
 </body>
+
 </html>

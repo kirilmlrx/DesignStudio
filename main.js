@@ -42,14 +42,19 @@
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
+        if (formData.get('select')) {
+            const select = formData.get('select');
+        }
 
-        const telegramMessage = `
+        let telegramMessage = `
 <b>Новая заявка из формы</b>
 Имя: ${name}
 Email: ${email}
 Сообщение: ${message}
         `;
-
+        if (formData.get('select')) {
+            telegramMessage += `\nВыбор: ${select}`;
+        }
         const success = await sendMessage(telegramMessage);
 
         statusDiv.style.display = 'none';
