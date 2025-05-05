@@ -38,9 +38,6 @@
         const name = formData.get('name');
         const email = formData.get('email');
         const message = formData.get('message');
-        if (formData.get('select')) {
-            const select = formData.get('select');
-        }
 
         let telegramMessage = `
 <b>Новая заявка из формы</b>
@@ -48,6 +45,7 @@
 Email: ${email}
 Сообщение: ${message}
         `;
+        const select = formData.get('select');
         if (select) {
             telegramMessage += `\nВыбор: ${select}`;
         }
