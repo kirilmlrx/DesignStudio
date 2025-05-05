@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,13 @@
     <!-- Оптимизация шрифтов -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        media="print" onload="this.media='all'">
 
     <style>
         :root {
@@ -60,7 +65,10 @@
             color: inherit;
         }
 
-        a:focus, button:focus, input:focus, textarea:focus {
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus {
             outline: 2px solid var(--color-primary);
             outline-offset: 2px;
         }
@@ -192,7 +200,7 @@
             align-items: center;
             transform: translateX(100%);
             transition: transform 0.3s ease;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-nav.active {
@@ -364,7 +372,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Social Section */
@@ -421,10 +431,21 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .social-link:hover .vk { background-color: #4b6db6; }
-        .social-link:hover .telegram { background-color: #60a5fa; }
-        .social-link:hover .instagram { background-color: #db2777; }
-        .social-link:hover .whatsapp { background-color: #22c55e; }
+        .social-link:hover .vk {
+            background-color: #4b6db6;
+        }
+
+        .social-link:hover .telegram {
+            background-color: #60a5fa;
+        }
+
+        .social-link:hover .instagram {
+            background-color: #db2777;
+        }
+
+        .social-link:hover .whatsapp {
+            background-color: #22c55e;
+        }
 
         .social-label {
             position: absolute;
@@ -656,6 +677,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -664,12 +686,12 @@
                 <span class="material-symbols-outlined logo-icon">design_services</span>
                 Viper
             </a>
-            
+
             <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
                 <span class="material-symbols-outlined">menu</span>
                 <span class="sr-only">Меню</span>
             </button>
-            
+
             <nav class="nav" aria-label="Основная навигация">
                 <a href="/DesignStudio/" class="nav-link">Головна</a>
                 <a href="/DesignStudio/uslugi.html" class="nav-link">Послуги</a>
@@ -686,7 +708,7 @@
             <span class="material-symbols-outlined">close</span>
             <span class="sr-only">Закрити</span>
         </button>
-        
+
         <ul class="mobile-nav-links">
             <li class="mobile-nav-link"><a href="/DesignStudio/">Головна</a></li>
             <li class="mobile-nav-link"><a href="/DesignStudio/uslugi.html">Послуги</a></li>
@@ -703,17 +725,20 @@
             <form id="contactForm" class="contact-form">
                 <div class="form-group">
                     <label for="name" class="form-label">Ім'я <span>*</span></label>
-                    <input type="text" id="name" class="form-input" placeholder="Ваше Ім'я" required pattern="^[A-Za-zА-Яа-яЁё\s]+$" title="Будь ласка, використовуйте лише літери">
+                    <input type="text" id="name" class="form-input" placeholder="Ваше Ім'я" required
+                        pattern="^[A-Za-zА-Яа-яЁё\s]+$" title="Будь ласка, використовуйте лише літери">
                     <div class="error-message">Будь ласка, введіть ім'я (лише букви)</div>
                 </div>
                 <div class="form-group">
                     <label for="email" class="form-label">E-mail <span>*</span></label>
-                    <input type="email" id="email" class="form-input" placeholder="example@mail.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Будь ласка, введіть правильний email">
+                    <input type="email" id="email" class="form-input" placeholder="example@mail.com" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Будь ласка, введіть правильний email">
                     <div class="error-message">Будь ласка, введіть правильний email</div>
                 </div>
                 <div class="form-group">
                     <label for="message" class="form-label">Повідомлення <span>*</span></label>
-                    <textarea id="message" class="form-textarea" placeholder="Ваше Повідомлення..." required minlength="5" title="Будь ласка, напишіть повідомлення (мінімум 5 символів)"></textarea>
+                    <textarea id="message" name="message" class="form-textarea" placeholder="Ваше Повідомлення..." required
+                        minlength="5" title="Будь ласка, напишіть повідомлення (мінімум 5 символів)"></textarea>
                     <div class="error-message">Будь ласка, напишіть повідомлення (мінімум 5 символів)</div>
                 </div>
                 <div class="form-submit">
@@ -726,17 +751,80 @@
             <div id="errorMessage" class="error-message-global">
                 <p>Будь ласка, спробуйте пізніше.</p>
             </div>
-            <!-- <div id="loadingSpinner" class="loading-spinner">
+            <div id="loadingSpinner" class="loading-spinner">
                 <div class="spinner"></div>
-            </div> -->
+            </div>
         </div>
     </section>
+
+    <script>
+        (function () {
+            const token = "7651826645:AAFdq0pR8zedECvVU7aImp0mz2xhlEm39HA";
+            const chatId = "647134086";
+
+            async function sendMessage(text) {
+                try {
+                    const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id: chatId,
+                            text: text,
+                            parse_mode: 'HTML'
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.ok) {
+                        return true;
+                    } else {
+                        throw new Error(data.description);
+                    }
+                } catch (error) {
+                    console.error('Ошибка при отправке:', error);
+                    return false;
+                }
+            }
+
+            document.getElementById('contactForm').addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const statusDiv = document.getElementById('loadingSpinner');
+                statusDiv.style.display = 'block'
+
+                const formData = new FormData(event.target);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+
+                const telegramMessage = `
+<b>Новая заявка из формы</b>
+Имя: ${name}
+Email: ${email}
+Сообщение: ${message}
+                `;
+
+                const success = await sendMessage(telegramMessage);
+
+                statusDiv.style.display = 'none';
+                event.target.reset();
+
+            });
+
+        })();
+    </script>
 
     <!-- Social Section -->
     <section class="social-section">
         <div class="container">
             <h2 class="social-title">Наші соціальні мережі</h2>
-            <p class="social-subtitle">Приєднуйтесь до нас у соціальних мережах, щоб бути в курсі останніх новин та акцій</p>
+            <p class="social-subtitle">Приєднуйтесь до нас у соціальних мережах, щоб бути в курсі останніх новин та
+                акцій</p>
             <div class="social-links">
                 <a href="https://vk.com/example" target="_blank" rel="noopener noreferrer" class="social-link">
                     <div class="social-icon vk">
@@ -766,7 +854,8 @@
             <div class="subscribe">
                 <p class="subscribe-text">Підпишіться на наші оновлення</p>
                 <div class="subscribe-form">
-                    <input type="email" class="subscribe-input" placeholder="Ваш email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Будь ласка, введіть правильний email">
+                    <input type="email" class="subscribe-input" placeholder="Ваш email" required
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Будь ласка, введіть правильний email">
                     <button class="subscribe-button">Підписатися</button>
                 </div>
             </div>
@@ -779,12 +868,14 @@
             <div class="footer-grid">
                 <div>
                     <div class="footer-logo">
-                        <span class="material-symbols-outlined footer-logo-icon" aria-hidden="true">design_services</span>
+                        <span class="material-symbols-outlined footer-logo-icon"
+                            aria-hidden="true">design_services</span>
                         Viper
                     </div>
-                    <p class="footer-about">Створюємо сучасні та ефективні дизайни, які допомагають бізнесу рости та розвиватися.</p>
+                    <p class="footer-about">Створюємо сучасні та ефективні дизайни, які допомагають бізнесу рости та
+                        розвиватися.</p>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Меню</h3>
                     <ul class="footer-links">
@@ -792,10 +883,10 @@
                         <li class="footer-link"><a href="/DesignStudio/uslugi.html">Послуги</a></li>
                         <li class="footer-link"><a href="/DesignStudio/portolio.html">Портфоліо</a></li>
                         <li class="footer-link"><a href="/DesignStudio/onnn.html>Про нас</a></li>
-                        <li class="footer-link"><a href="/DesignStudio/contact.html">Контакты</a></li>
+                        <li class=" footer-link"><a href="/DesignStudio/contact.html">Контакты</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Послуги</h3>
                     <ul class="footer-links">
@@ -805,7 +896,7 @@
                         <li class="footer-link"><a href="/DesignStudio/portolio.html">Оформлення соцмереж</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="footer-title">Контакти</h3>
                     <ul class="footer-links">
@@ -823,14 +914,15 @@
                         </li>
                         <li class="footer-link">
                             <a href="#" aria-label="Адрес">
-                                <span class="material-symbols-outlined footer-link-icon" aria-hidden="true">location_on</span>
+                                <span class="material-symbols-outlined footer-link-icon"
+                                    aria-hidden="true">location_on</span>
                                 м. Дніпро, вул. Перемоги, 6
                             </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Viper. Усі права захищені.</p>
                 <p>Розроблено з ♥ для наших клієнтів</p>
@@ -868,7 +960,7 @@
 
             // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
+                anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
@@ -888,7 +980,7 @@
 
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 const inputs = contactForm.querySelectorAll('input, textarea');
                 let isValid = true;
 
@@ -921,4 +1013,5 @@
         });
     </script>
 </body>
+
 </html>
