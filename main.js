@@ -30,13 +30,9 @@
             return false;
         }
     }
-    const statusDiv = document.getElementById('loadingSpinner');
-    statusDiv.style.display = 'none '
     document.getElementById('contactForm').addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const statusDiv = document.getElementById('loadingSpinner');
-        statusDiv.style.display = 'block'
 
         const formData = new FormData(event.target);
         const name = formData.get('name');
@@ -52,12 +48,11 @@
 Email: ${email}
 Сообщение: ${message}
         `;
-        if (formData.get('select')) {
+        if (select) {
             telegramMessage += `\nВыбор: ${select}`;
         }
         const success = await sendMessage(telegramMessage);
 
-        statusDiv.style.display = 'none';
         event.target.reset();
 
     });
